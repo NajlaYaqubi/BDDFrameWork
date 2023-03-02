@@ -13,3 +13,4 @@ Feature: Retail Account Page
     And User update Name 'Alzxx' and Phone '5713951355'
     And User click on Update button
     Then user profile information should be updated
+#comment only#
