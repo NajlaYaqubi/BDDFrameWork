@@ -44,5 +44,7 @@ public class RetailHomePage extends BaseSetup {
 	
 	@FindBy (xpath = "//div[@class='sidebar_content-item']//span")
 	public List<WebElement> sideBar;
+
+	
 	
 }

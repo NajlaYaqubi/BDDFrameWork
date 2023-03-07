@@ -19,4 +19,5 @@ public class BaseUITest extends CommonUtility {
 		
 		super.quitBrowser();
 	}
+	
 }
