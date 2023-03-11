@@ -72,35 +72,15 @@ public class SignInSteps extends CommonUtility {
 	}
 	
 
-	@When("User click on Add a payment method link")
-	public void userClickOnAddAPaymentMethodLink() {
-		click(factory.homePage().signInOption);
-		logger.info("user clicked on Add a payment method link");
+	
 	  
 	}
-	@When("User fill Debit or credit card information")
-	public void userFillDebitOrCreditCardInformation(io.cucumber.datatable.DataTable dataTable) {
-		List<Map<String, String>> data = dataTable.asMaps(String.class,String.class);
-		sendText(factory.signInPage().debitorcreditcardinformation,data.get(0).get("cardnumber"));
-		sendText(factory.signInPage().debitorcreditcardinformation, data.get(0).get("name"));
-		logger.info("user filled theDebit or credit card information");
-	   
-	    
-	}
-	@When("User click on add a payment method")
-	public void userClickOnaddapaymentmethod() {
-		click(factory.signInPage().userClickOnAddAPaymentMethod);  
-		logger.info("user clicked on Add your card button");
-	}
 	
-	@Then("a message should be displayed ‘Payment Method added successfully")
-	public void aMessageShouldBeDisplayedPaymentMethodAddedSuccessfully() {
 	
-	}
+	
 
 
 
-}
 
 
 

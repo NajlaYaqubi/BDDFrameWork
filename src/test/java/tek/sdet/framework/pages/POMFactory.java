@@ -6,6 +6,9 @@ public class POMFactory extends BaseSetup {
 	private RetailHomePage homePage;
 	private RetailSignInPage signInPage;
 	private RetailAccountPage accountPage;
+	private RetailOrderPage orderPage;
+	
+	
 	
 	public POMFactory() {
 		this.homePage = new RetailHomePage();
@@ -24,5 +27,7 @@ public class POMFactory extends BaseSetup {
 	public RetailAccountPage accountPage() {
 		return this.accountPage;
 	}
-	
+	public RetailAccountPage orderPage() {
+		return this.accountPage;
+}
 }

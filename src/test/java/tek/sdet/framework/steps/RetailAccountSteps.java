@@ -1,7 +1,11 @@
 package tek.sdet.framework.steps;
 
+import java.util.List;
+import java.util.Map;
+
 import org.junit.Assert;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -15,6 +19,7 @@ public class RetailAccountSteps extends CommonUtility {
 	// Write implementation steps
 
 	POMFactory factory = new POMFactory();
+	private List<Map<String, String>> dataTable;
 
 	@When("User click on Account option")
 	public void userClickOnAccountOption() {
@@ -48,6 +53,51 @@ public class RetailAccountSteps extends CommonUtility {
 		String expectedMessage = "Personal Information Updated Successfully";
 		Assert.assertEquals(expectedMessage, actualMessage);
 		logger.info("User Profile Information Updated");
+		
 	}
-
+	@When( "User click on Edit payment method option")
+	public void userClickOnEditPaymentMethodoption() {
+		click(factory.accountPage().editPaymentMethodoption);
+		logger.info("Edit payment method option");
+		
+	}
+	@And( "User click on Add a payment method link")
+	public void userClickOnAddAPaymentMethodLink() {
+		click(factory.accountPage().addaPaymentMethodlink);
+		logger.info("Add a payment method link");
+	}
+		@And("User fill debit or credit card information")
+		public void userFillDebitOrCreditCardInformation(DataTable dataTable) {
+			
+			List<Map<String, String>> data = dataTable.asMaps(String.class,String.class);
+			sendText(factory.accountPage().cardnumber, data.get(0).get("cardnumber"));
+			sendText(factory.accountPage().nameoncard,data.get(0).get("nameoncard"));
+			sendText(factory.accountPage().expirationmonth, data.get(0).get("expirationmonth"));
+			sendText(factory.accountPage().nameoncard,data.get(0).get("expirationyear"));
+			sendText(factory.accountPage().securitycode, data.get(0).get("securitycode"));
+			logger.info("user filled theDebit or credit card information");
+		       
+		}
+		@And("User click on Add your card button")
+		public void userClickOnAddYouCard() {
+			click(factory.accountPage().addyourcardButton);
+			logger.info("Click on add your card button");
+		
+		}
+		@And("a message should be displayed ‘Payment Method added successfully")
+		public void aMessageShouldBeDisplayedPaymentMethodAddedSuccessfully() {
+			
+			waitTillPresence(factory.accountPage().PaymentMethodaddedsuccessfully);
+			Assert.assertTrue(isElementDisplayed(factory.accountPage().PaymentMethodaddedsuccessfully));
+			String actualMessage = factory.accountPage().PaymentMethodaddedsuccessfully.getText();
+			String expectedMessage = "Payment Method added successfully";
+			Assert.assertEquals(expectedMessage, actualMessage);
+			logger.info("‘Payment Method added successfully");
+			
+	}
+		@Then("User click on remove option")
+		public void userClickOnremoveoption() {
+			click(factory.accountPage().addyourcardButton);
+			logger.info("Click on removeoption");
+}
 }

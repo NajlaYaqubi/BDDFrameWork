@@ -46,29 +46,7 @@ public class RetailSignInPage extends BaseSetup {
 	public WebElement accountoption;
 
 	
-	@FindBy(xpath="//p[contains(text(),'Add a payment method')]")
-	public WebElement userClickOnAddAPaymentMethod;
-	
-	@FindBy(xpath=" //body/div[@id='root']/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/h1[1]")
-	public WebElement debitorcreditcardinformation;
-	
-	@FindBy(css="#cardNumberInput")
-	public WebElement cardnumber;
-	
-	@FindBy(id = "nameOnCardInput")
-	public WebElement nameoncard;
-	
-	@FindBy(xpath="//select[@id='expirationMonthInput']")
-	public WebElement expirationmonth;
-	
-	@FindBy(css =" #expirationYearInput")
-	public WebElement expirationyear;
-	
-	@FindBy(xpath=" //input[@id='securityCodeInput']")
-	public WebElement securitycode;
-	
-	@FindBy(xpath="//div[contains(text(),'Payment Method added sucessfully')]")
-	public WebElement update;
+
 
 	
 
